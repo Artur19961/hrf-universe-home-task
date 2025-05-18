@@ -12,3 +12,14 @@ services:
       POSTGRES_PASSWORD: adm1n_password
     ports:
       - 5432:5432
+
+  api:
+    container_name: hrf_universe_api
+    build: .
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql+psycopg2://admin:adm1n_password@postgres/home_task
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgres
