@@ -36,9 +36,9 @@ def add_statistic_row(result_rows, country_code, standard_job_id, stats):
         id=str(uuid.uuid4()),
         country_code=country_code,
         standard_job_id=standard_job_id,
-        average_days_to_hire=float(stats["average"]),
-        min_days_to_hire=float(stats["minimum"]),
-        max_days_to_hire=float(stats["maximum"]),
+        average_days_to_hire=round(float(stats["average"]), 1),
+        min_days_to_hire=round(float(stats["minimum"]), 1),
+        max_days_to_hire=round(float(stats["maximum"]), 1),
         num_postings=stats["count"]
     ))
 

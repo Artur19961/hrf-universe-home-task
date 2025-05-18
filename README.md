@@ -33,8 +33,9 @@ docker exec -it hrf_universe_api poetry run python -m home_task.cli.stats stats 
 
 ### 5. Query the stored statistics using the API
 
+Example of request:
 ```bash
-curl -X GET "http://localhost:8000/stats/days-to-hire?standard_job_id={standard_job_id}&country_code={country_code}" \
+curl -X GET "http://localhost:8000/stats/days-to-hire?standard_job_id=5affc1b4-1d9f-4dec-b404-876f3d9977a0&country_code=DE" \
   -H "accept: application/json"
 ```
 
